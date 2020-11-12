@@ -17,7 +17,7 @@
             TimeInterval="Custom" CustomTimeInterval="1440"
             ScheduleType="TimeLine"
             Appointments="{Binding AppointmentCollection}"
-            ScheduleDateRange="{Binding dateTimes}">
+            ScheduleDateRange="{Binding DateRange}">
 
             <schedule:SfSchedule.ScheduleResourceTypeCollection>
                 <schedule:ResourceType TypeName="Doctors">

@@ -10,7 +10,7 @@ namespace ScheduleUWP
         private ObservableCollection<DateTime> datecoll = new ObservableCollection<DateTime>();
         DateTime currentdate;
         public ScheduleAppointmentCollection AppointmentCollection { get; set; } = new ScheduleAppointmentCollection();
-        public ObservableCollection<DateTime> dateTimes { get; set; } = new ObservableCollection<DateTime>();
+        public ObservableCollection<DateTime> DateRange { get; set; } = new ObservableCollection<DateTime>();
 
         string[] subject = new string[]
       {
@@ -88,11 +88,11 @@ namespace ScheduleUWP
                 AppointmentCollection.Add(appointment1);
                 AppointmentCollection.Add(appointment2);
 
-                dateTimes.Add(new DateTime(2020, 08, 1));
-                dateTimes.Add(new DateTime(2020, 08, 2));
-                dateTimes.Add(new DateTime(2020, 08, 3));
-                dateTimes.Add(new DateTime(2020, 08, 4));
-                dateTimes.Add(new DateTime(2020, 08, 5));
+                DateRange.Add(new DateTime(2020, 08, 1));
+                DateRange.Add(new DateTime(2020, 08, 2));
+                DateRange.Add(new DateTime(2020, 08, 3));
+                DateRange.Add(new DateTime(2020, 08, 4));
+                DateRange.Add(new DateTime(2020, 08, 5));
             }
         }
     }
