@@ -1,0 +1,46 @@
+﻿<Page
+    x:Class="ScheduleUWP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ScheduleUWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:schedule="using:Syncfusion.UI.Xaml.Schedule"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <schedule:SfSchedule
+            x:Name="schedule"
+            Resource="Doctors"
+            TimeInterval="Custom" CustomTimeInterval="1440"
+            ScheduleType="TimeLine"
+            Appointments="{Binding AppointmentCollection}"
+            ScheduleDateRange="{Binding dateTimes}">
+
+            <schedule:SfSchedule.ScheduleResourceTypeCollection>
+                <schedule:ResourceType TypeName="Doctors">
+                    <schedule:Resource
+                        DisplayName="Dr.Jacob"
+                        ResourceName="Dr.Jacob"
+                        TypeName="Doctors" />
+                    <schedule:Resource
+                        DisplayName="Dr.Darsy"
+                        ResourceName="Dr.Darsy"
+                        TypeName="Doctors" />
+                </schedule:ResourceType>
+            </schedule:SfSchedule.ScheduleResourceTypeCollection>
+
+            <schedule:SfSchedule.DataContext>
+                <local:SchedulerViewModel/>
+            </schedule:SfSchedule.DataContext>
+
+            <interactivity:Interaction.Behaviors>
+                <local:SchedulerBehavior/>
+            </interactivity:Interaction.Behaviors>
+
+        </schedule:SfSchedule>
+    </Grid>
+</Page>
+
